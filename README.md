@@ -1,1 +1,11 @@
-# highest-response-ratio-next-os-
+The Highest Response Ratio Next (HRRN) scheduling algorithm is a non-preemptive CPU scheduling algorithm that aims to improve upon the Shortest Job First (SJF) algorithm by addressing the problem of starvation. In SJF, processes with shorter burst times are scheduled first, resulting in a minimum average waiting time but potentially causing longer processes to suffer from starvation.
+
+HRRN introduces the concept of response ratio as the criteria for scheduling processes. The response ratio is calculated as the sum of the waiting time and burst time of a process divided by its burst time. Before scheduling a process, the response ratio of each process in the ready state is calculated. As the waiting time increases, the response ratio also increases, giving longer processes a better chance for execution.
+
+The advantages of HRRN include a reduction in waiting time for longer jobs while still favoring shorter jobs. Additionally, it solves the problem of starvation by ensuring that all processes get an opportunity to execute.
+
+However, HRRN also has some limitations. The average waiting time and turnaround time tend to increase compared to other scheduling algorithms. This is because the focus on response ratio may lead to longer processes waiting longer before execution.
+
+The algorithm for HRRN involves reading the number of processes, their arrival time, and burst time. The waiting time for each process is initially set to 0. At each time interval, the response ratio of all processes in the ready queue is calculated, and the process with the highest response ratio is selected for execution. In case of a tie in response ratios, the SJF algorithm can be used to break the tie. The waiting time of processes is updated, and the process execution continues until all processes are completed. Finally, the average waiting time and turnaround time are calculated and displayed.
+
+In summary, the HRRN scheduling algorithm improves upon SJF by considering response ratios and addressing the issue of starvation. It strikes a balance between favoring shorter jobs and providing opportunities for longer jobs to execute. However, it also leads to increased average waiting time and turnaround time.
